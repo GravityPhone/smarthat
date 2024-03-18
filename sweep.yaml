@@ -1,38 +1,34 @@
 # Sweep AI turns bugs & feature requests into code changes (https://sweep.dev)
 # For details on our config file, check out our docs at https://docs.sweep.dev/usage/config
 
-# This setting contains a list of rules that Sweep will check for. If any of these rules are broken in a new commit, Sweep will create an pull request to fix the broken rule.
+# This setting contains a list of rules that Sweep will check for. If any of these rules are broken in a new commit, 
+# Sweep will create a pull request to fix the broken rule.
 rules:
-  - "lots of print statements in the code so I can see what's happening in the terminal while it happens.  Anytime anything happens."
+  - "Lots of print statements in the code so I can see what's happening in the terminal while it happens. Anytime anything happens."
   - "Refactor large functions to be more modular."
   - "Always refer to what I have told you regarding the Open AI Assistants API because your training is out of date and you need to look up and digest the information about how the API works now before you work on it."
   - "Do not use libraries that are unlikely to work on Python 3.9, because that's what we are working in here."
   - "Use code that is cross-platform."
-# This is the branch that Sweep will develop from and make pull requests to. Most people use 'main' or 'master' but some users also use 'dev' or 'staging'.
+
+# This is the branch that Sweep will develop from and make pull requests to. Most people use 'main' or 'master' 
+# but some users also use 'dev' or 'staging'.
 branch: 'main'
 
-# By default Sweep will read the logs and outputs from your existing Github Actions. To disable this, set this to false.
-gha_enabled: True
+# By default, Sweep will read the logs and outputs from your existing Github Actions. To disable this, set this to false.
+gha_enabled: true
 
-# This is the description of your project. It will be used by sweep when creating PRs. You can tell Sweep what's unique about your project, what frameworks you use, or anything else you want.
+# This is the description of your project. It will be used by sweep when creating PRs. You can tell Sweep what's unique 
+# about your project, what frameworks you use, or anything else you want.
 #
 # Example:
 #
-# description: sweepai/sweep is a python project. The main api endpoints are in sweepai/api.py. Write code that adheres to PEP8.
-description: 'Upon activating your smart hat, it immediately enlists the Pocket Sphinx library, a silent guardian awaiting your commands. Say "computer," and the hat begins recording your voice as a wave file, meticulously capturing every nuance of your speech while still listening for further instructions.
+# description: "sweepai/sweep is a python project. The main api endpoints are in sweepai/api.py. Write code that adheres to PEP8."
+description: >
+  "Upon activating your smart hat, it immediately enlists the Pocket Sphinx library, a silent guardian awaiting your commands. Say 'computer,' and the hat begins recording your voice as a wave file, meticulously capturing every nuance of your speech while still listening for further instructions. Should you utter 'picture' during this recording, the hat seamlessly transitions into capturing a visual moment. This snapshot, a still image of your current perspective, is poised for integration into a digital narrative. However, the transcription of your voice, faithfully recorded, is where Assembly AI comes into play. It transforms your spoken words into written text, identifying nuances and context within your message. Given this is your initial interaction since the script's activation, your message embarks on a new digital thread. The smart hat possesses the intelligence to weave your message into an ongoing narrative if it detects a connection to a recent interaction, ensuring continuity in your digital dialogue. While Assembly AI processes the transcription, the hat remains vigilant, monitoring the status of your command within the thread. Upon receiving confirmation, it retrieves the processed message, a digital reflection of your intent, now enriched and ready for interaction. Here, Eleven Labs steps into the spotlight, giving voice to the text returned from the assistant. The hat uses Eleven Labs' technology to audibly deliver the message, ensuring that the digital interaction is not merely a silent exchange but a conversational experience. The smart hat is also attuned to the rhythm of interaction, measuring the time elapsed since the last message was vocalized. This temporal awareness guides its decision on whether to add your next command to the existing thread or to initiate a new one, maintaining a seamless flow in your digital journey. Also keep this in mind: Similar to the Chat Completions API, the Assistants API supports function calling. Function calling allows you to describe functions to the Assistants and have it intelligently return the functions that need to be called along with their arguments. The Assistants API will pause execution during a Run when it invokes functions, and you can supply the results of the function call back to continue the Run execution. When you initiate a Run with a user Message that triggers the function, the Run will enter a pending status. After it processes, the run will enter a requires_action state which you can verify by retrieving the Run. The model can provide multiple functions to call at once using parallel function calling. You can then complete the Run by submitting the tool output from the function(s) you call. Pass the tool_call_id referenced in the required_action object above to match output to each function call. After submitting outputs, the run will enter the queued state before it continues its execution."
 
-Should you utter "picture" during this recording, the hat seamlessly transitions into capturing a visual moment. This snapshot, a still image of your current perspective, is poised for integration into a digital narrative. However, the transcription of your voice, faithfully recorded, is where Assembly AI comes into play. It transforms your spoken words into written text, identifying nuances and context within your message.
-
-Given this is your initial interaction since the script's activation, your message embarks on a new digital thread. The smart hat possesses the intelligence to weave your message into an ongoing narrative if it detects a connection to a recent interaction, ensuring continuity in your digital dialogue.
-
-While Assembly AI processes the transcription, the hat remains vigilant, monitoring the status of your command within the thread. Upon receiving confirmation, it retrieves the processed message, a digital reflection of your intent, now enriched and ready for interaction.
-
-Here, Eleven Labs steps into the spotlight, giving voice to the text returned from the assistant. The hat uses Eleven Labs' technology to audibly deliver the message, ensuring that the digital interaction is not merely a silent exchange but a conversational experience.
-
-The smart hat is also attuned to the rhythm of interaction, measuring the time elapsed since the last message was vocalized. This temporal awareness guides its decision on whether to add your next command to the existing thread or to initiate a new one, maintaining a seamless flow in your digital journey.  Also keep this in mind: Similar to the Chat Completions API, the Assistants API supports function calling. Function calling allows you to describe functions to the Assistants and have it intelligently return the functions that need to be called along with their arguments. The Assistants API will pause execution during a Run when it invokes functions, and you can supply the results of the function call back to continue the Run execution.When you initiate a Run with a user Message that triggers the function, the Run will enter a pending status. After it processes, the run will enter a requires_action state which you can verify by retrieving the Run. The model can provide multiple functions to call at once using parallel function calling.You can then complete the Run by submitting the tool output from the function(s) you call. Pass the tool_call_id referenced in the required_action object above to match output to each function call.After submitting outputs, the run will enter the queued state before it continues it’s execution.'
-
-# This sets whether to create pull requests as drafts. If this is set to True, then all pull requests will be created as drafts and GitHub Actions will not be triggered.
-draft: False
+# This sets whether to create pull requests as drafts. If this is set to True, then all pull requests will be created as drafts 
+# and GitHub Actions will not be triggered.
+draft: false
 
 # This is a list of directories that Sweep will not be able to edit.
 blocked_dirs: []
